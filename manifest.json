@@ -1,0 +1,17 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "azimoon",
+  "short_name": "azimoon",
+  "version": "com.markpwns1.azimoon",
+  "description": "A tool for fast information about the moon (and sun)",
+  "author": "Mark Kaldas",
+  "icons": [
+    {
+      "src": "icon.png",
+      "type": "image/png",
+      "sizes": "108x108"
+    }
+  ],
+  "start_url": "index.html"
+}

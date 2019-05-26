@@ -1,0 +1,119 @@
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <link rel="stylesheet" type="text/css" href="css/platform.css">
+        <title>azi⋅moon</title>
+    </head>
+    <body style="background-color: black;">
+        <div class="center">
+            <h1 id="title">azi<b>⋅</b>moon</h1>
+            <h3 id="desc">A tool for fast information about the moon (and sun)</h3>
+            <hr>
+            <p id="warning">
+                Please allow location access so your coordinates can be used to calculate astronomical values.
+                Your location is used <b>only</b> for calculations and nothing else.<br><br>
+                After pressing "allow," please wait up to 10 seconds for your device to send your location...
+                <br>
+                <br>
+                <span id="error" hidden>
+                    <b>Error: </b>
+                    <span id="error-details"></span>
+                    <br>
+                    <br>
+                    If you believe there's nothing wrong on your side, report the problem <b><a href="https://github.com/markpwns1/azimoon/issues">here</a></b>.
+                    <br>
+                    <br>
+                    <center><h3><a id="try-again" href="#" hidden>Try Again</a></h3></center>
+                </span>
+            </p>
+            <div id="content" hidden>
+                <center>
+                    <h3 id="days-container">
+                        <a class="days" id="yesterday-button" href="#">Yesterday</a>
+                        <a class="days" id="today-button" href="#">Today</a>
+                        <a class="days" id="tomorrow-button" href="#">Tomorrow</a>
+                    </h3>
+                    <h3 id="time-used"></h3>
+                </center>
+                <div id="flexcontainer">
+                    <div id="moon">
+                        <h1>Moon</h1>
+                        <center><h1 id="moon-icon">A</h1></center>
+                        <h2 id="moon-illum">Illumination: </h2>
+                        <h2 id="moon-phase">Phase: </h2>
+                        <br>
+                        <h2 id="moon-direction">Direction: </h2>
+                        <h2 id="moon-altitude">Altitude: </h2>
+                        <br>
+                        <h2 id="moon-rise">Rise: </h2>
+                        <h2 id="moon-noon">Noon: </h2>
+                        <h2 id="moon-set">Set: </h2>
+                    </div>
+                    <div id="sun">
+                        <h1>Sun</h1>
+                        <h2 id="sun-rise">Rise: </h2>
+                        <h2 id="sun-noon">Noon: </h2>
+                        <h2 id="sun-set">Set: </h2>
+                        <br>
+                        <h2 id="sun-length">Day length: </h2>
+                        <h2 id="day-progress">Day progress: </h2>
+                        <br>
+                        <h2 id="golden-hours">Golden hours: <br>
+                            <span id="morning-golden-hour"></span>, 
+                            <span id="night-golden-hour"></span>
+                        </h2>
+                    </div>
+                </div>
+                <br>
+                <center>
+                    <h3>
+                        <a id="reset-position" class="links" href="#">Reset Location</a>
+                        <a class="links" href="https://github.com/markpwns1/azimoon">Source code</a>
+                        <a class="links" href="https://github.com/markpwns1/azimoon/issues">Report a problem</a>
+                        <a id="notes-button" class="links" href="#">Show Notes</a>
+                    </h3>
+                </center>
+                <ul id="notes" hidden>
+                    <li>The moon icon uses the Moon Phases 1.1 font. It is a copyright (C) of Curtis Clark and is free for personal use. <br> </li>
+                    <li>Your location is used <b>only</b> for calculating astronomical values, and is not sent anywhere. <br> </li>
+                    <li>The information provided may not be completely accurate, but is almost always good enough. </li>
+                    <li>The information provided is based on your system's time, and may be inaccurate if your system's time is configured incorrectly.</li>
+                </ul>
+            </div>
+        </div>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script src="scripts/jquery.js"></script>
+        <script src="scripts/suncalc.js"></script>
+        <script src="scripts/index.js"></script>
+    </body>
+</html>

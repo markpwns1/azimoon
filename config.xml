@@ -1,0 +1,14 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="com.markpwns1.azimoon" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <name>azimoon</name>
+    <icon density="mdpi" height="108" platform="android" src="icon.png" width="108" />
+    <description>
+        A tool for fast information about the moon (and sun)
+    </description>
+    <author email="mark_kaldas@yahoo.com">
+        Mark Kaldas
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+    <allow-intent href="https://*/*" />
+</widget>
