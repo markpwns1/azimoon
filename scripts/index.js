@@ -56,7 +56,7 @@ function subtractDate(a, b) {
         minutes: Math.floor(res / 60) % 60,
         hours: Math.floor(res / 3600) % 24,
         toString: function () {
-            return this.hours + ":" + this.minutes;
+            return pad(this.hours, 2) + ":" + pad(this.minutes, 2);
         }
     };
 }
