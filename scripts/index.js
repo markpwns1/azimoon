@@ -203,7 +203,6 @@ function onTomorrowClick() {
 }
 
 function onConnectionError(error) {
-    var codes = [ "Permission denied", "Position unavailable", "Timed out" ];
     var msg = error.message + "<br>";
 
     switch(error.code) {
@@ -212,6 +211,7 @@ function onConnectionError(error) {
         case 2:
         case 3:
             msg += "If you're on mobile, try going to settings and changing location mode from GPS to Wifi.";
+            break;
     }
 
     $("#error-details").html(msg);
@@ -221,9 +221,9 @@ function onConnectionError(error) {
 }
 
 function connect() {
-    if (window.localStorage.getItem("lat") === null || window.localStorage.getItem("lng") === null) {
+    if(true) {//if (window.localStorage.getItem("lat") === null || window.localStorage.getItem("lng") === null) {
         var options = {
-            timeout : 5000, 
+            timeout : 10000, 
             enableHighAccuracy: false,
             maximumAge: 60000
         };
@@ -240,7 +240,6 @@ function connect() {
                 longitude: parseFloat(window.localStorage.getItem("lng"))
             }
         });
-        console.log("Loaded cache!");
     }
 }
 
