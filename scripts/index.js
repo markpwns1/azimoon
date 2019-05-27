@@ -221,7 +221,7 @@ function onConnectionError(error) {
 }
 
 function connect() {
-    if(true) {//if (window.localStorage.getItem("lat") === null || window.localStorage.getItem("lng") === null) {
+    if (window.localStorage.getItem("lat") === null || window.localStorage.getItem("lng") === null) {
         var options = {
             timeout : 10000, 
             enableHighAccuracy: false,
@@ -231,7 +231,7 @@ function connect() {
         navigator.geolocation.getCurrentPosition(function(position) {
             showContent(position);
             window.localStorage.setItem("lat", coordinates.latitude);
-            window.localStorage.setItem("lng", coordinates.latitude);
+            window.localStorage.setItem("lng", coordinates.longitude);
         }, onConnectionError, options);
     } else {
         showContent({ 
@@ -240,6 +240,7 @@ function connect() {
                 longitude: parseFloat(window.localStorage.getItem("lng"))
             }
         });
+        // change for github
     }
 }
 
