@@ -20,7 +20,7 @@ function degToCompass(deg) {
 }
 
 function getMoonIcon(phase) {
-    var arr = "0ABCDEFGHIJKLM@NOPQRSTUVWXYZ".toLowerCase().split("");
+    var arr = "@ABCDEFGHIJKLM0NOPQRSTUVWXYZ".toLowerCase().split("");
     return arr[Math.floor(phase * arr.length)];
 }
 
@@ -122,8 +122,9 @@ function update() {
     }
 
     $("#moon-icon").text(getMoonIcon(moonIllumination.phase));
+    //$("#moon-icon").text(getMoonIcon(0.4));
     $("#moon-illum").text("Illumination: " + illumination + "%");
-    $("#moon-phase").text("Phase: " + phaseToText(moonIllumination.phase));
+    $("#moon-phase").text("Phase: " + phaseToText(moonIllumination.phase) + moonIllumination.phase);
 
     if(moonTimes.rise == null) {
         $("#moon-rise").text("Rise: None Today");
